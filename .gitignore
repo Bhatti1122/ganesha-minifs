@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS
+.DS_Store
+Thumbs.db
+*~
+*.swp
+
+# Runtime data
+/var/tmp/minifs_store/
+*.log
+
+# Mount points (don't track mounts)
+/mnt/
+
+# Editor
+.vscode/
+.idea/
+*.sublime-*
